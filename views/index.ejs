@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/create">Create Blog</a>
+</nav>
+
+<div class="hero">
+    <h1>Welcome to Our Blog</h1>
+    <p>Explore the latest blogs and articles</p>
+</div>
+
+<div class="container">
+    <h2>All Blogs</h2>
+    <ul class="blog-list">
+        <% blogs.forEach(blog => { %>
+            <li class="blog-card">
+                <a href="/blogs/<%= blog.id %>"><%= blog.title %></a>
+                <p><%= blog.content.slice(0, 100) %>...</p>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2024 Blog Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
